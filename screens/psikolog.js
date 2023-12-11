@@ -1,7 +1,8 @@
 import { Heading, Image, Text, FlatList, Button, Box, ScrollView, Pressable } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { Header } from "../components";
-import datas from "../datas";
+//datapsikolog//
+import datapsikolog from "../datapsikolog";
 
 const Psikolog = () => {
   const navigation = useNavigation();
@@ -37,7 +38,6 @@ const Psikolog = () => {
             {/* <Text fontSize={"sm"}>{item.harga}</Text> */}
             <Button onPress={() => navigation.navigate("about-psikolog", {item:item} )}  alignSelf="flex-end"  borderRadius="full"  w={"100"} h={"10"} mt={"7"}>Konsultasi</Button>
           </Box>
-          
         </Box>
       </Box>
     );
@@ -47,11 +47,10 @@ const Psikolog = () => {
     <>
       <Header title={"Psikolog"} />
       <FlatList
-        data={datas}
+        data={datapsikolog}
         renderItem={renderitem}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        mt={-8}
       />
     </>
   );

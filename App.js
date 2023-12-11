@@ -3,20 +3,21 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { NativeBaseProvider, Text } from "native-base";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   Home,
   Psikolog,
-  NewsDetail,
   Profile,
   AboutPsikolog,
-  Konsultasi,
   Pembayaran,
+  Konsultasi,
 } from "./screens"
 // import Pembayaran from "./screens/pembayaran";
 
 // Navigator Declaration
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+// const insets = useSafeAreaInsets();
 
 const noHead = { headerShown: false };
 
@@ -28,7 +29,7 @@ const Tabs = () => {
           let iconName;
           switch (route.name) {
             case "Home":
-              iconName = "home-outline";
+              iconName = "home";
               break;
 
             case "Psikolog":
@@ -51,7 +52,24 @@ const Tabs = () => {
         tabBarIconStyle: { marginTop: 5 },
         tabBarStyle: {
           height: 100,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          borderBottomRightRadius: 20,
+          borderBottomLeftRadius: 20,
+          margin: 20,
           borderTopWidth: 0,
+          position: 'absolute',
+          backgroundColor: '#C4E9F5',
+          // paddingTop: insets.center,
+          // paddingBottom: insets.center, 
+          padding: 5,
+          shadowOffset: {
+            width: 0,
+            height: 8,
+          },
+          shadowOpacity: 0.50,
+          shadowRadius: 10.0,
+          
         },
         tabBarLabel: ({ children, color, focused }) => {
           return (
@@ -76,8 +94,8 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
           <Stack.Screen name="about-psikolog" component={AboutPsikolog} options={noHead} />
-          <Stack.Screen name="konsultasi" component={Konsultasi} options={noHead} />
           <Stack.Screen name="Pembayaran" component={Pembayaran} options={noHead} />
+          <Stack.Screen name="Konsultasi" component={Konsultasi} options={noHead} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

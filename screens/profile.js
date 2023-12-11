@@ -4,14 +4,12 @@ import { Header } from "../components";
 const Profile = () => {
   return (
     <>
-      <Header title={"Profile"} />
+      <Header title={"Home"} />
       <Center flex={1}>
-        <Heading>Ini Profile cak</Heading>
+        <Heading>Ini Profile</Heading>
       </Center>
     </>
   );
 };
 
 export default Profile;
-
-     

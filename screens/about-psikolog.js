@@ -1,7 +1,7 @@
 import { Heading, Center, Text, Box, Image, ScrollView, Button, HStack } from "native-base";
 import { Header } from "../components";
 import { useNavigation } from "@react-navigation/native";
-import datas from "../datas";
+
 
 const AboutPsikolog = ({ route }) => {
   const navigation = useNavigation();
@@ -10,7 +10,7 @@ const AboutPsikolog = ({ route }) => {
   return (
     <>
       <Header title={"About"} withBack="true"/>
-      <ScrollView>
+      <ScrollView >
         <Image source={{uri: params.image}} w={"full"} h={"80"} alt="Image"/>
         <Box  p={"4"} borderBottomColor={"coolGray.300"} borderBottomWidth={1}>
           <Heading>{params.title}</Heading>

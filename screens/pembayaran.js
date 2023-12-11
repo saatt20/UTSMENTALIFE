@@ -1,3 +1,157 @@
+import { Box, Text, Image, HStack, Button, Heading, VStack, Alert, Select, CheckIcon, Modal, Radio } from "native-base";
+import React, {useState} from "react";
+import { Header } from "../components";
+import { useNavigation } from "@react-navigation/native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+const Pembayaran = () => {
+  const navigation = useNavigation();
+  const [showModal, setShowModal] = useState();
+  const [showModal2, setShowModal2] = useState(false);
+ 
+ 
+  return (
+    <>
+      <Header title={"Pembayaran"} withBack= {"true"} />
+      <Box p={"4"} bg={"#D9E8ED"} >
+        <HStack>
+        <Image source={{ uri: "https://i.pinimg.com/564x/23/56/a9/2356a9f5370e67942a6c79a927fd30ad.jpg"}}
+        w={"75"}
+        h={"20"}
+        borderRadius={10}
+        alt="image"
+        />
+        <Heading textAlign={"left"} ml={"3"} mt={"3"} fontSize={"md"}>Dr. Nadia Utami, M.Psi</Heading>
+        </HStack>
+        <Box>
+          <VStack>
+            <Text></Text>
+          </VStack>
+        </Box>
+      </Box>
+      <Box mt="5" bg={"#D9E8ED"} >
+        <HStack>
+          <Text textAlign={"left"} ml={"5"} fontSize={"sm"}>Biaya Sesi 60 Menit </Text>
+          <Text textAlign={"left"} ml={"176"} fontSize={"sm"}>Rp.75.000 </Text>
+        </HStack>
+      </Box>
+      <Box  bg={"#D9E8ED"} >
+        <HStack>
+          <Text textAlign={"left"} ml={"5"} fontSize={"sm"}>Biaya Layanan </Text>
+          <Text textAlign={"left"} ml={"210"} fontSize={"sm"}>Rp.1.000 </Text>
+        </HStack>
+      </Box>
+      <Box p={"1"}  bg={"#D9E8ED"} >
+        <HStack>
+          <Heading textAlign={"left"} ml={"4"} fontSize={"sm"}>Total Biaya </Heading>
+          <Text textAlign={"left"} ml={"226"} fontSize={"sm"}>Rp.76.000 </Text>
+        </HStack>
+      </Box>
+      <Box  p={"2"} mt={"5"} bg={"#D9E8ED"}  >
+          <Button onPress={() => navigation.navigate("Konsultasi")}>Konsultasi Sekarang</Button >
+      </Box>
+      <Box  p={"16"} mt={"72"} bg={"#D9E8ED"}>
+      <Button onPress={() => setShowModal(true)}>Bayar Sekarang</Button>
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="lg">
+        <Modal.Content maxWidth="350">
+          <Modal.CloseButton />
+          <Modal.Header>Order</Modal.Header>
+          <Modal.Body>
+            <VStack space={3}>
+              <HStack alignItems="center" justifyContent="space-between">
+                <Text fontWeight="medium">Sub Total</Text>
+                <Text color="blueGray.400">Rp. 75.000</Text>
+              </HStack>
+              <HStack alignItems="center" justifyContent="space-between">
+                <Text fontWeight="medium">Tax</Text>
+                <Text color="blueGray.400">Rp. 1.000</Text>
+              </HStack>
+              <HStack alignItems="center" justifyContent="space-between">
+                <Text fontWeight="medium">Total Amount</Text>
+                <Text color="green.500">Rp. 76.000</Text>
+              </HStack>
+            </VStack>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button flex="1" onPress={() => {
+            setShowModal2(true);
+          }}>
+              Pilih Pembayaran
+            </Button>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
+      <Modal isOpen={showModal2} size="lg" onClose={() => setShowModal2(false)}>
+        <Modal.Content maxWidth="350">
+          <Modal.CloseButton />
+          <Modal.Header>Pilih Pembayaran</Modal.Header>
+          <Modal.Body>
+            <Radio.Group name="payment" size="sm">
+              <VStack space={3}>
+                <Radio alignItems="flex-start" _text={{
+                mt: "-1",
+                ml: "2",
+                fontSize: "sm"
+              }} value="payment1">
+                  M-Banking
+                </Radio>
+                <Radio alignItems="flex-start" _text={{
+                mt: "-1",
+                ml: "2",
+                fontSize: "sm"
+              }} value="payment2">
+                  Qris
+                </Radio>
+                <Radio alignItems="flex-start" _text={{
+                mt: "-1",
+                ml: "2",
+                fontSize: "sm"
+              }} value="payment3">
+                  LinkAja
+                </Radio>
+              </VStack>
+            </Radio.Group>
+          </Modal.Body>
+          <Modal.Footer>
+          <Button flex="1" onPress={() => {
+            setShowModal(false);
+            setShowModal2(false);
+          }}>Bayar
+            </Button>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
+    </Box>
+      </>
+  );
+};
+
+export default Pembayaran;
+
+
+
+
+
+
+
+
+ /* <Box maxW="full" mt={"5"}>
+        <Select accessibilityLabel="Choose Paymenrt" placeholder="Choose Payment" _selectedItem={{
+        bg: "teal.600",
+        endIcon: <CheckIcon size="5" />
+      }} mt={1}>
+          <Select label="Qris" value="ux" />
+          <Select label="M-Banking" value="web" />
+          <Select label="ShopeePay" value="cross" />
+          <Select label="Dana" value="ui" />
+          <Select label="LinkAja" value="backend" />
+        </Select>
+      </Box> */
+
+
+
+
+
 // import { Heading, Center, Box, HStack, Text, Button, Input, ScrollView, FormControl, FlatList, Image } from "native-base";
 // import { Header } from "../components";
 // import { useNavigation } from "@react-navigation/native";
@@ -103,144 +257,3 @@
 
 
 // export default Konsultasi;
-
-import { Box, Text, Image, HStack, Button, Heading, VStack, Alert, Select, CheckIcon, Modal, Radio } from "native-base";
-import React, {useState} from "react";
-import { Header } from "../components";
-import Ionicons from "@expo/vector-icons/Ionicons";
-
-const Pembayaran = () => {
-  const [showModal, setShowModal] = useState();
-  const [showModal2, setShowModal2] = useState(false);
- 
- 
-  return (
-    <>
-      <Header title={"Pembayaran"} withBack= {"true"} />
-      <Box p={"4"} bg={"#D9E8ED"} >
-        <HStack>
-        <Image source={{ uri: "https://i.pinimg.com/564x/23/56/a9/2356a9f5370e67942a6c79a927fd30ad.jpg"}}
-        w={"75"}
-        h={"20"}
-        borderRadius={10}
-        alt="image"
-        />
-        <Heading textAlign={"left"} ml={"3"} mt={"3"} fontSize={"md"}>Dr. Nadia Utami, M.Psi</Heading>
-        </HStack>
-        <Box>
-          <VStack>
-            <Text></Text>
-          </VStack>
-        </Box>
-      </Box>
-      <Box mt="5" bg={"#D9E8ED"} >
-        <HStack>
-          <Text textAlign={"left"} ml={"5"} fontSize={"sm"}>Biaya Sesi 60 Menit </Text>
-          <Text textAlign={"left"} ml={"176"} fontSize={"sm"}>Rp.75.000 </Text>
-        </HStack>
-      </Box>
-      <Box  bg={"#D9E8ED"} >
-        <HStack>
-          <Text textAlign={"left"} ml={"5"} fontSize={"sm"}>Biaya Layanan </Text>
-          <Text textAlign={"left"} ml={"210"} fontSize={"sm"}>Rp.1.000 </Text>
-        </HStack>
-      </Box>
-      <Box p={"1"}  bg={"#D9E8ED"} >
-        <HStack>
-          <Heading textAlign={"left"} ml={"4"} fontSize={"sm"}>Total Biaya </Heading>
-          <Text textAlign={"left"} ml={"226"} fontSize={"sm"}>Rp.76.000 </Text>
-        </HStack>
-      </Box>
-      <Box  p={"2"} mt={"5"} bg={"#D9E8ED"}  >
-          <Button >Gunakan Kupon</Button >
-      </Box>
-      {/* <Box maxW="full" mt={"5"}>
-        <Select accessibilityLabel="Choose Paymenrt" placeholder="Choose Payment" _selectedItem={{
-        bg: "teal.600",
-        endIcon: <CheckIcon size="5" />
-      }} mt={1}>
-          <Select label="Qris" value="ux" />
-          <Select label="M-Banking" value="web" />
-          <Select label="ShopeePay" value="cross" />
-          <Select label="Dana" value="ui" />
-          <Select label="LinkAja" value="backend" />
-        </Select>
-      </Box> */}
-      <Box  p={"16"} mt={"72"} bg={"#D9E8ED"}>
-      <Button onPress={() => setShowModal(true)}>Bayar Sekarang</Button>
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="lg">
-        <Modal.Content maxWidth="350">
-          <Modal.CloseButton />
-          <Modal.Header>Order</Modal.Header>
-          <Modal.Body>
-            <VStack space={3}>
-              <HStack alignItems="center" justifyContent="space-between">
-                <Text fontWeight="medium">Sub Total</Text>
-                <Text color="blueGray.400">Rp. 75.000</Text>
-              </HStack>
-              <HStack alignItems="center" justifyContent="space-between">
-                <Text fontWeight="medium">Tax</Text>
-                <Text color="blueGray.400">Rp. 1.000</Text>
-              </HStack>
-              <HStack alignItems="center" justifyContent="space-between">
-                <Text fontWeight="medium">Total Amount</Text>
-                <Text color="green.500">Rp. 76.000</Text>
-              </HStack>
-            </VStack>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button flex="1" onPress={() => {
-            setShowModal2(true);
-          }}>
-              Pilih Pembayaran
-            </Button>
-          </Modal.Footer>
-        </Modal.Content>
-      </Modal>
-      <Modal isOpen={showModal2} size="lg" onClose={() => setShowModal2(false)}>
-        <Modal.Content maxWidth="350">
-          <Modal.CloseButton />
-          <Modal.Header>Pilih Pembayaran</Modal.Header>
-          <Modal.Body>
-            <Radio.Group name="payment" size="sm">
-              <VStack space={3}>
-                <Radio alignItems="flex-start" _text={{
-                mt: "-1",
-                ml: "2",
-                fontSize: "sm"
-              }} value="payment1">
-                  M-Banking
-                </Radio>
-                <Radio alignItems="flex-start" _text={{
-                mt: "-1",
-                ml: "2",
-                fontSize: "sm"
-              }} value="payment2">
-                  Qris
-                </Radio>
-                <Radio alignItems="flex-start" _text={{
-                mt: "-1",
-                ml: "2",
-                fontSize: "sm"
-              }} value="payment3">
-                  LinkAja
-                </Radio>
-              </VStack>
-            </Radio.Group>
-          </Modal.Body>
-          <Modal.Footer>
-          <Button flex="1" onPress={() => {
-            setShowModal(false);
-            setShowModal2(false);
-          }}>
-              Bayar
-            </Button>
-          </Modal.Footer>
-        </Modal.Content>
-      </Modal>
-    </Box>
-      </>
-  );
-};
-
-export default Pembayaran;

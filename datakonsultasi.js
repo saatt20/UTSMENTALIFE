@@ -1,5 +1,5 @@
 const content="";
-const datas = [
+const datakonsultasi = [
   {
     id: 1,
     title:
@@ -73,4 +73,4 @@ const datas = [
   },
 ];
 
-export default datas;
+export default datakonsultasi;

@@ -1,9 +1,8 @@
 import Home from "./home";
 import Psikolog from "./psikolog";
 import Profile from "./profile";
-import NewsDetail from "./news-detail";
 import AboutPsikolog from "./about-psikolog";
-import Konsultasi from "./konsultasi";
 import Pembayaran from "./pembayaran";
+import Konsultasi from "./konsultasi";
 
-export {Home, Psikolog, Profile, NewsDetail, AboutPsikolog, Konsultasi, Pembayaran};
+export {Home, Psikolog, Profile, AboutPsikolog, Pembayaran, Konsultasi};
