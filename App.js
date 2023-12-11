@@ -76,10 +76,6 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
-          {/* <Stack.Screen name="Home" component={Home} options={noHead} />
-          <Stack.Screen name="psikolog" component={psikolog} options={noHead} />
-          <Stack.Screen name="profile" component={profile} options={noHead} />  */}
-          {/* <Stack.Screen name="berita" component={berita} options={noHead} /> */}
           <Stack.Screen name="Hospital" component={HospitalList} options={noHead} />
           <Stack.Screen name="Berita" component={Berita} options={noHead} />
         </Stack.Navigator>

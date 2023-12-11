@@ -10,7 +10,7 @@ const Header = ({ title, withBack = false }) => {
     return (
         <SafeAreaView>
             <StatusBar barStyle="light" backgroundColor="black" />
-            <Box bgColor={"blue.300"} p={"4"}>  
+            <Box bgColor={"#7dd3fc"} p={"4"}>  
                 <HStack alignItems="center">
                     {withBack && (
                         <TouchableOpacity

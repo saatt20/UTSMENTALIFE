@@ -20,7 +20,7 @@ const Home = () => {
 
               <HStack>
                 <Box justifyContent={"center"} alignItems={"center"} >
-                  <Text bold fontSize={"16"} color={"#fafafa"} ml={5} textAlign={"left"}>What is Mental health? </Text>
+                  <Text bold fontSize={"16"} color={"black"} ml={5} textAlign={"left"}>What is Mental health? </Text>
                   <Text fontSize={"14"} mt={2} ml={5} textAlign={"center"}>Let's find our information </Text>
                   <Text fontSize={"14"} ml={5} textAlign={"left"}>about Mental health </Text>
 
@@ -70,7 +70,7 @@ const Home = () => {
           </TouchableOpacity>
         </Center>
 
-      
+
         <Text bold fontSize={15} w={"300"} pt={"3"} textAlign={"start"} mt={3} ml={5}>Berbagi Cerita Yuk</Text>
 
         <ScrollView horizontal={true} m={1} >
@@ -95,7 +95,7 @@ const Home = () => {
                 <Stack p="4" space={3}>
                   <Stack space={2}>
                     <Heading size="md" ml="-1">
-                    hal ini, yang bisa mencegah dan mengurangi risiko bunuh diri.
+                      hal ini, yang bisa mencegah dan mengurangi risiko bunuh diri.
                     </Heading>
                     <Text fontSize="xs" _light={{
                       color: "blue.400"
@@ -120,6 +120,7 @@ const Home = () => {
             </Box>
           </TouchableOpacity>
 
+          <TouchableOpacity onPress={() => { navigation.navigate('Berita'); }}>
           <Box alignItems="center">
             <Box maxW="80" rounded="lg" mt={5} overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
               borderColor: "coolGray.600",
@@ -140,7 +141,7 @@ const Home = () => {
               <Stack p="4" space={2}>
                 <Stack space={2}>
                   <Heading size="md" ml="-1">
-                  cara memilih terapi yang paling sesuai untukmu
+                    cara memilih terapi yang paling sesuai untukmu
                   </Heading>
                   <Text fontSize="xs" _light={{
                     color: "blue.400"
@@ -151,14 +152,14 @@ const Home = () => {
                   </Text>
                 </Stack>
                 <HStack alignItems="center" space={2} justifyContent="space-between">
-                    <HStack alignItems="center">
-                      <Text color="coolGray.600" _dark={{
-                        color: "warmGray.200"
-                      }} fontWeight="200">
-                        6 mins ago
-                      </Text>
-                    </HStack>
+                  <HStack alignItems="center">
+                    <Text color="coolGray.600" _dark={{
+                      color: "warmGray.200"
+                    }} fontWeight="200">
+                      6 mins ago
+                    </Text>
                   </HStack>
+                </HStack>
                 <HStack alignItems="center" space={4} justifyContent="space-between">
                   <HStack alignItems="center">
 
@@ -167,6 +168,7 @@ const Home = () => {
               </Stack>
             </Box>
           </Box>
+          </TouchableOpacity>
 
         </ScrollView>
 
