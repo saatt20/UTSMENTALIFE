@@ -8,6 +8,8 @@ import Pengaturan from "./screens/pengaturan";
 import Bantuan from "./screens/bantuan";
 import LanggananDetail from "./screens/langganan-detail";
 import Langganan from "./screens/langganan";
+import Psikolog from "./screens/psikolog";
+import Home from "./screens/home";
 
 // Navigator Declaration
 const Stack = createNativeStackNavigator();
@@ -25,6 +27,16 @@ const Tabs = () => {
             case "Lainnya":
               iconName = "menu-outline";
               break;
+
+              case "Home":
+                iconName = "home-outline";
+                break;
+
+              case "Psikolog":
+              iconName = "git-network-outline";
+              break;
+
+             
           }
           return (
             <Ionicons
@@ -48,6 +60,8 @@ const Tabs = () => {
         },
       })}
     >
+      <Tab.Screen name="Home" component={Home} options={noHead} />
+      <Tab.Screen name="Psikolog" component={Psikolog} options={noHead} />
       <Tab.Screen name="Lainnya" component={Lainnya} options={noHead} />
     </Tab.Navigator>
   );
@@ -83,6 +97,7 @@ const App = () => {
             component={Bantuan}
             options={noHead}
           />
+         
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
