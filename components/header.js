@@ -5,49 +5,47 @@ import { TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
+
 const Header = ({ title, withBack = false }) => {
-  const trueGray900 = "#171717";
-  const navigation = useNavigation();
-  return (
-    <SafeAreaView>
-      <StatusBar barStyle="light" backgroundColor={trueGray900} />
-      <Box bg={"black" } p={"4"}>
-        <HStack justifyContent="space-between" alignItems="center">
-          <HStack alignItems="center">
-            {!withBack ? (
-              <>
+    const trueGray900 = "#171717";
+    const navigation = useNavigation();
+    return (
+      <SafeAreaView>
+        <StatusBar barStyle="dark-content" backgroundColor={"white"} />
+        <Box bg={"blue"} p={"2"}>
+          <HStack justifyContent="space-between" alignItems="center">
+            <HStack alignItems="center">
+              {!withBack ? (
+                <>
+                <Box mr={"5"}>
+                  <Ionicons name="person" size={25} color="black" 
+                  />
+                  </Box>
+                </>
+                ) : (
+                    <TouchableOpacity
+                    activeOpacity={0.5}
+                    onPress={() => navigation.goBack()}
+                    >
+                    <Box mr={"3"}>
+                        <Ionicons name="arrow-back-outline" size={32} color="black" />
+                    </Box>
+                    </TouchableOpacity>
+                )}
+                <Heading color={"black"}>{title}</Heading>
+                
+                </HStack>
                 <Image
-                  source={require("../assets/logo-mentalife.png")}
-                  w={20}
-                  h={10}
-                  marginX={-2}
-                  alt="-"/>
-              </>
-            ) : (
-              <TouchableOpacity
-                activeOpacity={0.5}
-                onPress={() => navigation.goBack()}
-              >
-                <Box mr={"2"}>
-                  <Ionicons name="arrow-back-outline" size={32} color="white" />
+                    source={require("../assets/search.png")}
+                    w="5"
+                    h="5"
+                    alt="Search Icon"
+                    alignItems={"flex-end"}
+                    />
+                </HStack>
                 </Box>
-              </TouchableOpacity>
-            )}
-            <Heading color={"white"}>{title}</Heading>
-          </HStack>
-
-          <HStack space={"2xl"}>
-            <Image
-              source={require("../assets/search.png")}
-              w="5"
-              h="5"
-              alt="-"
-            />
-          </HStack>
-        </HStack>
-      </Box>
-    </SafeAreaView>
-  );
-};
-
-export default Header;
+                </SafeAreaView>
+                
+                );
+                };
+export default Header;
