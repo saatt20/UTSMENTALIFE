@@ -4,7 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import { Header } from "../components";
 import datas from "../datas";
 
-
 const Langganan = () => {
   const navigation = useNavigation();
   const renderitem = ({ item }) => {

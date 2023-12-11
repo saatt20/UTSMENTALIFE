@@ -18,17 +18,13 @@ const LanggananDetail = ({ route }) => {
                         source={{ uri: params.image }}
                         alt="Image Data"
                         marginBottom={1}
-                        role="img"
-                    />    
+                        role="img"/>    
                   <Center h={100}>
                     <Button onPress={() => setShowModal(true)}w={"2xs"} h={55} bgColor={"#db2777"}>
                     <Text bold fontSize={"md"} color={"white"}> Langganan Sekarang</Text>
                     </Button>
                     <Modal isOpen={showModal} onClose={() => setShowModal(false)} _backdrop={{
-                    _dark: {
-                      bg: "coolGray.800"
-                    }
-                  }}>
+                    _dark: { bg: "coolGray.800"}}}>
                     <Modal.Content maxWidth="500" maxH="350">
                       <Modal.CloseButton />
                       <Modal.Header >Kenapa Beli Paket Ini?</Modal.Header>
@@ -74,8 +70,7 @@ const LanggananDetail = ({ route }) => {
                     </Text>
                 </View>
           </ScrollView>
-        </>
+           </>
     );
 };
-
 export default LanggananDetail;

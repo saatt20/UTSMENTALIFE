@@ -2,8 +2,7 @@ import { Heading, ScrollView, VStack, Stack, Divider, Box, Image} from "native-b
 import { Header } from "../components";
 import { TouchableOpacity } from "react-native";
 
-const Home = ({navigation}) => {
-  // const navigation = useNavigation();
+const Lainnya = ({navigation}) => {
   return (
     <ScrollView>
       <Header title={"Mental Health"}/> 
@@ -35,8 +34,6 @@ const Home = ({navigation}) => {
             </Box>
           </TouchableOpacity>
         
-
-
         {/* Pengaturan */}
         <TouchableOpacity onPress={() => navigation.navigate("Pengaturan")}>
         <Box
@@ -98,4 +95,4 @@ const Home = ({navigation}) => {
   );
 };
 
-export default Home;
+export default Lainnya;

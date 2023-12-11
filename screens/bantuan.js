@@ -1,9 +1,9 @@
-import { Text, Box, Actionsheet, Button, useDisclose, CheckIcon, Modal,
+import { Text, Box, Actionsheet, Button, useDisclose, CheckIcon, Modal, 
   InfoIcon, SunIcon,Image, VStack, Heading,  useBreakpointValue, View} from "native-base";
  import { Header } from "../components";
  import { useState, React} from "react";
  
- const Bantuan = ({navigation}) => {
+ const Bantuan = () => {
  const flexDir = useBreakpointValue({
   base: "row",
   lg: "row"

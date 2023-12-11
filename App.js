@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer} from "@react-navigation/native";
 import { NativeBaseProvider, Text } from "native-base";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Home from "./screens/home";
+import Lainnya from "./screens/lainnya";
 import Pengaturan from "./screens/pengaturan";
 import Bantuan from "./screens/bantuan";
 import LanggananDetail from "./screens/langganan-detail";
@@ -48,7 +48,7 @@ const Tabs = () => {
         },
       })}
     >
-      <Tab.Screen name="Lainnya" component={Home} options={noHead} />
+      <Tab.Screen name="Lainnya" component={Lainnya} options={noHead} />
     </Tab.Navigator>
   );
 };

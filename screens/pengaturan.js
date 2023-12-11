@@ -1,4 +1,4 @@
-import { Text, Box, Button, Modal, FormControl, Input ,VStack, Popover, AspectRatio, Image, Center ,AlertDialog,useColorMode } from "native-base";
+import { Text, Box, Button, Modal, FormControl, Input ,VStack, Popover, Image, AlertDialog} from "native-base";
 import { Header } from "../components";
 import { useState, React, useRef} from "react";
 
